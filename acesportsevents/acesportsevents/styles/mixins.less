@@ -1,0 +1,69 @@
+// out: null
+/*/ test to see if mixins is being recognized by less and style.css*/
+
+.loveHate(@paramColor1; @paramColor2; @paramColor3; @paramColor4) {
+    text-decoration: none;
+    &:link {
+        color: @paramColor1;
+        //font-weight: 800;
+    }
+    &:visited {
+        color: @paramColor2;
+    }
+    &:hover {
+        color: @paramColor3;
+        //font-weight: bolder;
+    }
+    &:active {
+        color: @paramColor4;
+    }
+}
+
+.headingStyle(@paramColor; @paramSize) {
+    color: @paramColor;
+    font-size: @paramSize;
+    line-height: @paramSize;
+    margin-top: @paramSize / 2;
+    margin-bottom: @paramSize / 2;
+}
+
+.buttonRounded(@paramRadius; @paramColor) {
+    background-color: @paramColor;
+    -moz-border-radius: @paramRadius;
+    -o-border-radius: @paramRadius;
+    -webkit-border-radius: @paramRadius;
+    border-radius: @paramRadius;
+}
+
+.buttonShadowInset(@hOffset: 0; @vOffset: 0; @blur: 2em; @paramColor: @darkColor4) {
+    border: solid 1px @paramColor;
+    -moz-box-shadow: inset  @hOffset @vOffset @blur @paramColor;
+    -o-box-shadow: inset  @hOffset @vOffset @blur @paramColor;
+    -webkit-box-shadow: inset  @hOffset @vOffset @blur @paramColor;
+    box-shadow: inset  @hOffset @vOffset @blur @paramColor;
+}
+
+.gradient(@paramDirection; @paramColorDark; @paramColorLight) {
+    -moz-background: linear-gradient(@paramDirection, @paramColorDark, @paramColorLight);
+    -o-background: linear-gradient(@paramDirection, @paramColorDark, @paramColorLight);
+    -webkit-background: linear-gradient(@paramDirection, @paramColorDark, @paramColorLight);
+    background: linear-gradient(@paramDirection, @paramColorDark, @paramColorLight);
+}
+
+.emphasizeUppercase() {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.borderBreaks(@paramSize: 3px; @paramBottomStyle: solid; @paramTopStyle: dotted; @paramColor: @color3) {
+    border-bottom: @paramSize @paramBottomStyle @paramColor;
+    border-top: @paramSize @paramTopStyle @paramColor;
+}
+
+.imgBorder() {
+    border: 2px solid #4E798D;
+}
+
+
+
+
