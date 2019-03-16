@@ -27,6 +27,10 @@ a {
     text-decoration: none;
 }
 
+/*--------------------------------------*/
+//          HEADER AND NAV BAR          //
+/*--------------------------------------*/
+
 header {
     width: 100%;
     .gradient(to bottom;
@@ -45,7 +49,7 @@ header {
     }
 }
 
-    /* modified "hamburger" menu navigation, includes JavaScript slideToggle() attached to .dropdown and .dropdown-content in mobile view */
+/* modified "hamburger" menu navigation, includes JavaScript slideToggle() attached to .dropdown and .dropdown-content in mobile view */
 nav {
     background-color: @color3;
     clear: both;
@@ -60,6 +64,14 @@ nav {
         font-size: 2em;
         line-height: 1em;
         text-align: center;
+        span {
+            //border-bottom: double 3px @accentColor;
+            font-size: .75em;
+            sup {
+                font-size: .5em;
+                vertical-align: super;
+            }
+        }
     }
 
     a {
@@ -84,6 +96,12 @@ nav {
             //background-color: darkcyan;
         }
 
+        .spanImg {
+            display: none;
+            float: left;
+            width: 18%;
+        }
+
         span {
             color: @color1;
             float: left;
@@ -95,9 +113,9 @@ nav {
 
         .dropbtn {
             //the "hamburger" navigation button
-            background-color: @color3;
+            background-color: @color2;
             border: none;
-            color: @color2;
+            color: @accentColor;
             float: right;
             font-size: 1em;
             padding: .8em 1em;
@@ -123,9 +141,11 @@ nav {
 
             a {
                 border-bottom: 1px solid @color2;
+
                 &:first-child {
                     border-top: 1px solid @color2;
                 }
+
                 color: @color1;
                 display: block;
                 float: none;
@@ -133,6 +153,7 @@ nav {
                 padding: .6em 1em;
                 text-align: left;
                 text-decoration: none;
+
                 &:hover {
                     background-color: @color3;
                     color: @color5;
@@ -144,6 +165,7 @@ nav {
         }
     }
 }
+
 .sticky {
     left: 0;
     position: fixed;
@@ -152,79 +174,237 @@ nav {
     z-index: 10;
 }
 
+.stickyH1 {
+    margin: .25em 0;
+}
+
+//          end header/navbar css           //
+/*--------------------------------------*/
+
+.tablet {
+    display: none;
+}
+
+/*--------------------------------------*/
+//           Facebook Feed              //
+/*--------------------------------------*/
+
+.facebook {
+    border: none;
+    padding-top: .5em;
+    overflow: hidden;
+}
+
+//          end facebook css           //
+/*--------------------------------------*/
+
+
+/*--------------------------------------*/
+//               Main CSS               //
+/*--------------------------------------*/
 main {
-        margin: .5em;
+    margin: .5em;
 
-        h2 {
-            border-bottom: 1px solid @color2;
-            color: @color4;
-            font-family: 'Open Sans Condensed', sans-serif;
-            font-size: 1.5em;
-            padding: 1em 0 .5em .25em;
-        }
+    h2 {
+        border-bottom: 1px solid @accentColor;
+        color: @color4;
+        font-family: 'Open Sans Condensed', sans-serif;
+        font-size: 1.5em;
+        padding: 1em 0 .5em .25em;
+    }
 
-        section {
-            article {
-                padding: .5em .25em .25em .25em;
+    section {
+        article {
+            padding: .5em .25em .25em .25em;
 
-                img {
-                    width: 100%;
+            img {
+                width: 100%;
+            }
+
+            p {
+                font-size: 1.1em;
+                line-height: 1.2em;
+                padding: .25em 0;
+                strong {
+                    color: @color3;
+                    font-family: 'Open Sans Condensed', sans-serif;
+                    font-size: 1.25em;
+                    text-align: center;
                 }
+            }
+            ul {
+                font-size: 1.1em;
+                line-height: 1.3em;
+                padding: .15em 0 .15em 1em;
 
-                p {
-                    font-size: 1em;
-                    line-height: 1.15em;
-                    padding: .25em 0;
+                li {
+                    list-style-type: circle;
+                    list-style-position: outside;
+                    margin-left: 2em;
                 }
+            }
+            
 
-                dl {
-                    padding: .25em 0;
+            dl {
+                padding: .25em 0;
 
-                    dt {
+                dt {
+                    font-family: 'Open Sans Condensed', sans-serif;
+                    font-size: 1.15em;
+                    padding: .25em 0 .15em 0;
+                    strong {
+                        border-bottom-color: rgba(40,68,59,.2);
+                        border-bottom-style: solid;
+                        border-bottom-width: thin;
+                        color: @lightColor3;
                         font-family: 'Open Sans Condensed', sans-serif;
-                        font-size: 1.15em;
-                        padding: .25em 0 .15em 0;
+                        font-weight: bold;
                     }
+                }
 
-                    dd {
-                        font-size: .95em;
-                        padding-left: .25em;
-                    }
-
+                dd {
+                    font-size: 1em;
+                    line-height: 1.5em;
+                    padding: .25em 0 .5em .5em;
                     ul {
-                        padding: .15em 0;
-
+                        background: rgba(40,68,59,.1);
+                        font-size: .85em;
                         li {
+                            color: @color3;
                             list-style-type: circle;
-                            list-style-position: inside;
+                            list-style-position: outside;
+                            padding-left: 0;
+                        }
+                    }
+                    ol {
+                        background: rgba(40,68,59,.1);
+                        font-size: .85em;
+                        li {
+                            color: @color3;
+                            list-style-type: none;
                             padding-left: 1em;
                         }
                     }
+                } 
+            }
+            /*-----------------Forms CSS -----------------*/
+            form {
+                padding-top: .5em;
+                strong {
+                    font-weight: bold;
+                }
+                fieldset {
+                    background: @lightColor3;
+                    color: @color1;
+                    margin: .5em 0;
+                    padding: .5em 0;
+                }
+                label {
+                    font-family: 'Open Sans Condensed', sans-serif;
+                    font-size: 1.2em;
+                    margin: .5em 0 .25em 0;
+                    padding: .75em; 
+                }
+                input[type=text] {
+                    margin: 8px 0;
+                    padding: 5px 10px;
+                    width: 100%;
+                }
+                input[type=submit] {
+                    .gradient(to bottom right; @color3; @color2);
+                    color: white;
+                    font-size: 1em;
+                    font-weight: bold;
+                    padding: 8px 10px;
+                    width: 100%;
+                }
+                input[type=radio] {
+                    margin: 5px 5px 10px 6em; 
+                }
+                input[type=number] {
+                    margin: 5px 0 10px 0;
+                    padding: 5px 10px;
+                    width: 100%;
+                }
+                textarea {
+                    margin: 5px 0 10px 0;
+                    width: 100%;
+                }
+                select {
+                    background-color: @lightColor2;
+                    border: none;
+                    border-radius: 2px;
+                    font-size: 1em;
+                    margin: 5px 0 10px 0;
+                    padding: 5px 10px;
+                    width: 100%;
                 }
             }
+            /*           end forms css                        */
+        /*--------------------------------------------------------*/
+        }
 
-            aside {
-                padding: .5em .25em .25em .25em;
+        aside {
+            padding: .5em .25em .25em .25em;
 
-                p {
+            p {
+                font-size: 1em;
+                line-height: 1.15em;
+                padding: .25em 0;
+            }
+
+            dl {
+                padding: .25em .5em;
+
+                dt {
+                    font-family: 'Open Sans Condensed', sans-serif;
+                    font-size: 1.15em;
+                    padding: .25em 0 .15em 0;
+                    strong {
+                        border-bottom-color: rgba(40,68,59,.2);
+                        border-bottom-style: solid;
+                        border-bottom-width: thin;
+                        color: @color3;
+                        font-family: 'Open Sans Condensed', sans-serif;
+                        font-weight: bold;
+                        padding-top: .5em;
+                    }
+                }
+
+                dd {
                     font-size: 1em;
-                    padding: .25em 0;
+                    line-height: 1.5em;
+                    padding-left: .5em;
+                }
+
+                ul {
+                    padding: .15em 0;
+
+                    li {
+                        list-style-type: circle;
+                        list-style-position: inside;
+                        padding-left: 1em;
+                    }
                 }
             }
         }
     }
-
+}
+#faq {
+    cursor: pointer;
+}
 footer {
-        background: linear-gradient(@color3, @color4);
-        color: @color1;
-        font-family: 'Open Sans Condensed', sans-serif;
-        padding: 1em;
+    background: linear-gradient(@color3, @color4);
+    color: @color1;
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding: 1em;
+
     ul {
         font-size: 1.5em;
         line-height: 1.75em;
         padding-top: .15em;
         text-align: center;
-        
+
         li {
             display: inline;
         }
@@ -236,23 +416,27 @@ footer {
         padding-bottom: 0;
         width: 50%;
     }
+
     p {
         font-size: .75em;
         text-align: right;
     }
 }
 
-    /* ----------Following Styling is for larger than mobile resolutions---------*/
+/* ----------Following Styling is for larger than mobile resolutions---------*/
 
 @media only screen and (min-width: 481px) {
     body {
-        .gradient (to bottom right; @color2; @lightColor2)
+        .gradient (to bottom right;
+        @color2;
+        @lightColor2)
     }
+
     header {
         section {
             padding: 1em 0 0 1em;
         }
-            
+
         h1 {
             color: @color1;
             float: none;
@@ -276,23 +460,118 @@ footer {
             display: none;
         }
     }
+    /*-----------------------------------------/
+    /          Slide Show CSS                  /
+    /    adapted from W3 Schools tutorial      /
+    /-----------------------------------------*/
+    .tablet {
+        display: inline;
+    }
+    
+    .mobile {
+        display: none;
+    }
+    
+    .mySlides {
+        display: none;
+    }
+
+    img {
+        vertical-align: middle;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+        margin: auto;
+        max-width: 1000px;
+        padding-top: .5em;
+        position: relative;
+
+    }
+
+    /* Caption text */
+    .text {
+        color: @color4;
+        font-family: 'Open Sans Condensed', sans-serif; 
+        font-size: 15px;
+        padding: 2px 12px;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* The dots/bullets/indicators */
+    #dotLine {
+        text-align: center;
+    }
+    
+    .dot {
+        height: 10px;
+        width: 10px;
+        margin: 0 2px;
+        background-color: @color3;
+        border-radius: 50%;
+        display: inline-block;
+        text-align: center;
+        transition: background-color 0.6s ease;
+    }
+
+    .active {
+        background-color: @lightColor3;
+    }
+
+    /* Fading animation */
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+
+    @-webkit-keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+    //          end slideshow css           //
+    /*--------------------------------------*/
+    
     main {
         section {
             article {
-                .gradient (to bottom right; @color1; @lightColor1);
+                .gradient (to bottom right;
+                @color1;
+                @lightColor1);
                 margin-left: .25em;
+
                 p {
+                    font-size: 1.2em;
+                    line-height: 1.2em;
                     padding-left: 1em;
                 }
+
                 dl {
                     padding-left: 1em;
                 }
             }
-            aside {
-                
-            }
+
+            aside {}
         }
     }
+
     footer {
         img {
             margin-left: 35%;
@@ -301,28 +580,39 @@ footer {
         }
     }
 }
+
 @media only screen and (min-width: 769px) {
-/* centers content on top of background image */
-    header, nav, main, footer {
+
+    /* centers content on top of background image */
+    header,
+    nav,
+    main,
+    footer {
         margin-left: auto;
         margin-right: auto;
         max-width: 1000px;
     }
+
     header {
         margin-top: 2em;
+
         h1 {
             font-size: 3em;
         }
     }
+
     .dropdown {
         display: none;
     }
+
     nav {
         padding-bottom: .25em;
         width: 100%;
+
         h1 {
             font-size: 2.5em;
         }
+
         ul {
             display: inline-block;
             font-size: 1.25em;
@@ -331,41 +621,55 @@ footer {
             margin-right: auto;
             text-align: center;
             width: 100%;
+
             li {
-                border: 1px solid @color4;
                 color: @color1;
-                .gradient(to bottom; @color2; @lightColor2);
+                .gradient(to bottom;
+                @color2;
+                @lightColor2);
                 display: inline-block;
                 margin: .25em .25em .5em 0;
                 width: 18%;
+
                 a {
-                    
-                    .loveHate(@color1; @color5; @color1; @color3);
+
+                    .loveHate(@color1;
+                    @color5;
+                    @color1;
+                    @color3);
                 }
             }
         }
     }
-/* background image, found: https://www.w3schools.com/howto/howto_css_full_page.asp */
-    .bg { 
-      /* The image used */
-      background-image: url("../images/background.jpg");
 
-      /* Full height */
-      height: 100%; 
+    /* background image, found: https://www.w3schools.com/howto/howto_css_full_page.asp */
+    .bg {
+        /* The image used */
+        background-image: url("../images/background.jpg");
 
-      /* Center and scale the image nicely */
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
+        /* Full height */
+        height: 100%;
+
+        /* Center and scale the image nicely */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
+
     main {
-       .gradient (to bottom right; @color2; @lightColor2);
+        .gradient (to bottom right;
+        @color2;
+        @lightColor2);
+
         section {
             article {
-                .gradient (to bottom; @color1; @lightColor1);
+                .gradient (to bottom;
+                @color1;
+                @lightColor1);
             }
         }
     }
+
     footer {
         margin-bottom: 2em;
     }

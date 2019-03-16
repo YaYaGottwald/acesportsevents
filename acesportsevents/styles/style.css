@@ -23,6 +23,8 @@ a {
   font-weight: bold;
   text-decoration: none;
 }
+/*--------------------------------------*/
+/*--------------------------------------*/
 header {
   width: 100%;
   -moz-background: linear-gradient(to bottom, #132727, #28443b);
@@ -55,6 +57,13 @@ nav h1 {
   line-height: 1em;
   text-align: center;
 }
+nav h1 span {
+  font-size: .75em;
+}
+nav h1 span sup {
+  font-size: .5em;
+  vertical-align: super;
+}
 nav a {
   color: #111619;
   padding: .8em 1em;
@@ -69,6 +78,11 @@ nav .dropdown {
   overflow: hidden;
   width: 100%;
 }
+nav .dropdown .spanImg {
+  display: none;
+  float: left;
+  width: 18%;
+}
 nav .dropdown span {
   color: #fffff6;
   float: left;
@@ -78,9 +92,9 @@ nav .dropdown span {
   padding: .5em .5em;
 }
 nav .dropdown .dropbtn {
-  background-color: #28443b;
+  background-color: #7aa2a6;
   border: none;
-  color: #7aa2a6;
+  color: #ff0000;
   float: right;
   font-size: 1em;
   padding: .8em 1em;
@@ -127,11 +141,28 @@ nav .dropdown .dropdown-content a:hover {
   width: 100%;
   z-index: 10;
 }
+.stickyH1 {
+  margin: .25em 0;
+}
+/*--------------------------------------*/
+.tablet {
+  display: none;
+}
+/*--------------------------------------*/
+/*--------------------------------------*/
+.facebook {
+  border: none;
+  padding-top: .5em;
+  overflow: hidden;
+}
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*--------------------------------------*/
 main {
   margin: .5em;
 }
 main h2 {
-  border-bottom: 1px solid #7aa2a6;
+  border-bottom: 1px solid #ff0000;
   color: #132727;
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 1.5em;
@@ -139,14 +170,33 @@ main h2 {
 }
 main section article {
   padding: .5em .25em .25em .25em;
+  /*-----------------Forms CSS -----------------*/
+  /*           end forms css                        */
+  /*--------------------------------------------------------*/
 }
 main section article img {
   width: 100%;
 }
 main section article p {
-  font-size: 1em;
-  line-height: 1.15em;
+  font-size: 1.1em;
+  line-height: 1.2em;
   padding: .25em 0;
+}
+main section article p strong {
+  color: #28443b;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.25em;
+  text-align: center;
+}
+main section article ul {
+  font-size: 1.1em;
+  line-height: 1.3em;
+  padding: .15em 0 .15em 1em;
+}
+main section article ul li {
+  list-style-type: circle;
+  list-style-position: outside;
+  margin-left: 2em;
 }
 main section article dl {
   padding: .25em 0;
@@ -156,24 +206,133 @@ main section article dl dt {
   font-size: 1.15em;
   padding: .25em 0 .15em 0;
 }
+main section article dl dt strong {
+  border-bottom-color: rgba(40, 68, 59, 0.2);
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  color: #4e8473;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: bold;
+}
 main section article dl dd {
-  font-size: .95em;
-  padding-left: .25em;
+  font-size: 1em;
+  line-height: 1.5em;
+  padding: .25em 0 .5em .5em;
 }
-main section article dl ul {
-  padding: .15em 0;
+main section article dl dd ul {
+  background: rgba(40, 68, 59, 0.1);
+  font-size: .85em;
 }
-main section article dl ul li {
+main section article dl dd ul li {
+  color: #28443b;
   list-style-type: circle;
-  list-style-position: inside;
+  list-style-position: outside;
+  padding-left: 0;
+}
+main section article dl dd ol {
+  background: rgba(40, 68, 59, 0.1);
+  font-size: .85em;
+}
+main section article dl dd ol li {
+  color: #28443b;
+  list-style-type: none;
   padding-left: 1em;
+}
+main section article form {
+  padding-top: .5em;
+}
+main section article form strong {
+  font-weight: bold;
+}
+main section article form fieldset {
+  background: #4e8473;
+  color: #fffff6;
+  margin: .5em 0;
+  padding: .5em 0;
+}
+main section article form label {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.2em;
+  margin: .5em 0 .25em 0;
+  padding: .75em;
+}
+main section article form input[type=text] {
+  margin: 8px 0;
+  padding: 5px 10px;
+  width: 100%;
+}
+main section article form input[type=submit] {
+  -moz-background: linear-gradient(to bottom right, #28443b, #7aa2a6);
+  -o-background: linear-gradient(to bottom right, #28443b, #7aa2a6);
+  -webkit-background: linear-gradient(to bottom right, #28443b, #7aa2a6);
+  background: linear-gradient(to bottom right, #28443b, #7aa2a6);
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 8px 10px;
+  width: 100%;
+}
+main section article form input[type=radio] {
+  margin: 5px 5px 10px 6em;
+}
+main section article form input[type=number] {
+  margin: 5px 0 10px 0;
+  padding: 5px 10px;
+  width: 100%;
+}
+main section article form textarea {
+  margin: 5px 0 10px 0;
+  width: 100%;
+}
+main section article form select {
+  background-color: #b7cdcf;
+  border: none;
+  border-radius: 2px;
+  font-size: 1em;
+  margin: 5px 0 10px 0;
+  padding: 5px 10px;
+  width: 100%;
 }
 main section aside {
   padding: .5em .25em .25em .25em;
 }
 main section aside p {
   font-size: 1em;
+  line-height: 1.15em;
   padding: .25em 0;
+}
+main section aside dl {
+  padding: .25em .5em;
+}
+main section aside dl dt {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.15em;
+  padding: .25em 0 .15em 0;
+}
+main section aside dl dt strong {
+  border-bottom-color: rgba(40, 68, 59, 0.2);
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  color: #28443b;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: bold;
+  padding-top: .5em;
+}
+main section aside dl dd {
+  font-size: 1em;
+  line-height: 1.5em;
+  padding-left: .5em;
+}
+main section aside dl ul {
+  padding: .15em 0;
+}
+main section aside dl ul li {
+  list-style-type: circle;
+  list-style-position: inside;
+  padding-left: 1em;
+}
+#faq {
+  cursor: pointer;
 }
 footer {
   background: linear-gradient(#28443b, #132727);
@@ -229,6 +388,79 @@ footer p {
   header .mobile {
     display: none;
   }
+  /*-----------------------------------------/
+    /          Slide Show CSS                  /
+    /    adapted from W3 Schools tutorial      /
+    /-----------------------------------------*/
+  .tablet {
+    display: inline;
+  }
+  .mobile {
+    display: none;
+  }
+  .mySlides {
+    display: none;
+  }
+  img {
+    vertical-align: middle;
+  }
+  /* Slideshow container */
+  .slideshow-container {
+    margin: auto;
+    max-width: 1000px;
+    padding-top: .5em;
+    position: relative;
+  }
+  /* Caption text */
+  .text {
+    color: #132727;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 15px;
+    padding: 2px 12px;
+    text-align: center;
+    width: 100%;
+  }
+  /* The dots/bullets/indicators */
+  #dotLine {
+    text-align: center;
+  }
+  .dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: #28443b;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.6s ease;
+  }
+  .active {
+    background-color: #4e8473;
+  }
+  /* Fading animation */
+  .fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  @-webkit-keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  /*--------------------------------------*/
   main section article {
     -moz-background: linear-gradient(to bottom right, #fffff6, #ffffff);
     -o-background: linear-gradient(to bottom right, #fffff6, #ffffff);
@@ -237,6 +469,8 @@ footer p {
     margin-left: .25em;
   }
   main section article p {
+    font-size: 1.2em;
+    line-height: 1.2em;
     padding-left: 1em;
   }
   main section article dl {
@@ -284,7 +518,6 @@ footer p {
     width: 100%;
   }
   nav ul li {
-    border: 1px solid #132727;
     color: #fffff6;
     -moz-background: linear-gradient(to bottom, #7aa2a6, #b7cdcf);
     -o-background: linear-gradient(to bottom, #7aa2a6, #b7cdcf);
